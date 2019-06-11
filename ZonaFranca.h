@@ -5,17 +5,14 @@
 #include "Ambiente.h"
 #include "Algoritmo.h"
 
-#include "GeneticoBasico.h"
-#include "GeneticoSuertudo.h"
-#include "GeneticoHitler.h"
+#include "GeneticoBasico.cpp"
 // AQUI DEBEN AGREGAR SUS .H DE LOS ALGORITMOS
+#include "DragonBasico.cpp"
 
 
-#include "AmbienteEntero.h"
-#include "AmbienteMochila.h"
-#include "AmbientePokemon.h"
+#include "AmbienteEntero.cpp"
 // AQUI DEBEN AGREGAR SUS .H DE LOS AMBIENTES
-
+#include "AmbienteDragon.cpp"
 
 class ZonaFranca {   
    private:
@@ -30,7 +27,7 @@ class ZonaFranca {
 	  
       Ambiente * nuevoAmbiente(char *,int);
 	  
-      Algoritmo * nuevoAlgoritmo(char * );
+      Algoritmo * nuevoAlgoritmo(char *);
 	    
 };
 #endif

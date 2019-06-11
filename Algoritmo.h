@@ -31,14 +31,6 @@ class Algoritmo {
 		  return nombre;
 	  }
       // Destructor virtual con implementación vacia
-
-      virtual ~Algoritmo(){};
-
-
-	  
+      virtual ~Algoritmo(){};	  
 };
-
-
-
-
 #endif

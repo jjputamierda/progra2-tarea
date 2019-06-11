@@ -1,11 +1,11 @@
-#ifndef AMBIENTE_ENTERO
-#define AMBIENTE_ENTERO
-#include "CriaturaEntera.cpp"
+#ifndef AMBIENTE_DRAGON
+#define AMBIENTE_DRAGON
+#include "DragonDaenerys.cpp"
 #include "Poblacion.h"
 #include "Ambiente.h"
-class AmbienteEntero : public Ambiente {
+class AmbienteDragon : public Ambiente {
 	public:
-	  AmbienteEntero();
+	  AmbienteDragon();
       double evaluar(Criatura *);
       Poblacion * crearPoblacionInicial();	  	  
 };
