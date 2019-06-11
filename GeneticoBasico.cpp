@@ -1,5 +1,5 @@
 #include "GeneticoBasico.h"
-
+#include <stdlib.h>
 GeneticoBasico::GeneticoBasico()
 {
 	this->setNombre("GeneticoBasico");
@@ -24,7 +24,7 @@ Poblacion *GeneticoBasico::evolucionar(Poblacion *inicial)
 		Criatura *criaturas[ambientePtr->getCantidadCriaturas()];
 		double puntaje[ambientePtr->getCantidadCriaturas()];
 
-		while (cantidadGeneraciones++ < 80 && !poblacionPerfecta)
+		while (cantidadGeneraciones++ < 30 && !poblacionPerfecta)
 		{
 			generacionSiguiente = new Poblacion();
 			contador = 0;
@@ -76,6 +76,7 @@ Poblacion *GeneticoBasico::evolucionar(Poblacion *inicial)
 			int cortePadre;
 			int corteMadre;
 			int w = 0;
+			int w2=0;
 			Criatura **hijo = 0;
 				while (!padresOK)
 				{
@@ -92,10 +93,14 @@ Poblacion *GeneticoBasico::evolucionar(Poblacion *inicial)
 				while (hijo[w] && cantidadSeleccionados < ambientePtr->getCantidadCriaturas())
 				{
 					generacionSiguiente->insertar(fin, hijo[w]);
-					delete hijo[w];
 					cantidadSeleccionados++;
 					++w;
 				}
+				w2=0;
+				while (hijo[w2]) {
+					delete hijo[w2];
+					++w2;
+				}				
 				delete[] hijo;
 			}
 			// DECIDIR SI HAY MUTACION Y SE LA APLICO ALEATORIAMETE A ALGUNA CRIATURA
@@ -112,7 +117,7 @@ Poblacion *GeneticoBasico::evolucionar(Poblacion *inicial)
 			// COMENTAR LUEGO DE VER COMO SE PORTA
 			delete generacionActual;
 			generacionActual = generacionSiguiente;
-			cout << "Termine generacion " << cantidadGeneraciones << endl;
+			cout << "Termina generacion " << cantidadGeneraciones << endl;
 		}
 	}
 	return generacionActual;

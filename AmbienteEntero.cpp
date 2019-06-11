@@ -5,6 +5,12 @@ AmbienteEntero::AmbienteEntero(){
 	this->setCantidadCriaturas(100);
 	this->setNombre("CriaturaEntera");
 }
+
+/*
+** @Funcion: evalua una criaturaEntera para determinar que tan apta es
+** @Param: recibe un puntero a objetos Criatura
+** @Return: devuelve un valor que determina la aptitud de la criatura, siendo 1 el mejor y 0 el peor
+*/
 double AmbienteEntero::evaluar(Criatura * ptr){
     CriaturaEntera * ptrE = dynamic_cast< CriaturaEntera * >( ptr );
 	double ajuste = 0;
@@ -22,6 +28,12 @@ double AmbienteEntero::evaluar(Criatura * ptr){
 	return ajuste;
 }
 
+/*
+** @Funcion: crea una poblacion inicial de criaturas CriaturaEntera, del tamano especificado por el usuario. Genera cada criatura con valores aleatorios, pero
+** siempre dentro de los rangos establecidos para cada atributo 
+** @Param: este metodo no requiere ningun parametro
+** @Return: retorna un puntero a un objeto poblacion, que es una lista con las criaturas iniciales creadas
+*/
 Poblacion * AmbienteEntero::crearPoblacionInicial(){
 	int aleatorio = 0;
 	CriaturaEntera proto;

@@ -1,8 +1,9 @@
-#include "ZonaFranca.h" // Le pido instancias de Ambiente y de Algoritmo..
-#include "Poblacion.h" // Poblacion de criaturas 
+#include "ZonaFranca.cpp" // Le pido instancias de Ambiente y de Algoritmo..
+#include "Poblacion.cpp" // Poblacion de criaturas 
 #include <ctime>
 #define _MAX_CRIATURAS 100;
 int main(int argn, char ** argv){
+  if(argn > 3) {
    char * nombreAlgoritmo = argv[1];
    char * nombreCriatura = argv[2];
    char * cantidadCriaturasString = argv[3];
@@ -42,7 +43,7 @@ int main(int argn, char ** argv){
 
  // Algoritmo no puede modificar la poblacion inicial
       cout << "POBLACION FINAL "<<endl;
-      cout << poblacionFinalPtr;
+      cout << " " << poblacionFinalPtr;
       cout << endl;
 	  
 	  if(poblacionInicialPtr){
@@ -52,5 +53,10 @@ int main(int argn, char ** argv){
          delete poblacionFinalPtr;
 	  }
    }
-   return 0;
+  }
+  else {
+	  
+	cout << "Uso: " << argv[0] << " nombreAlgoritmo nombreCriatura cantidadDeCriaturas"<< endl;  
+  }
+  return 0;
 }
